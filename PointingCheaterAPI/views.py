@@ -4,17 +4,17 @@ from rest_framework.response import Response
 from django.http import JsonResponse
 import os
 import requests
+from rest_framework import status
+from .serializers import FeedbackSerializer
 
+"""
+This endpoint will fetch pointing poker data through
+it's api and filter according the need
+"""
 @api_view(['GET'])
 def fetch_votes(request):
-    market = request.GET.get('market', 'BTC')
     api_key = os.getenv('PP_API_KEY')
-    if api_key is None:
-        print("MY_API_KEY is not set.")
-    else:
-        print(f"Your API Key is: {api_key}")
 
-    api_key = 'https://www.pointingpoker.com/api/sessions/a03e2f8b-e40d-4874-950c-2f9cd6a45f77' # remove code later
     try:
         response = requests.get(api_key)
         if response.status_code == 200:
@@ -48,7 +48,18 @@ def fetch_votes(request):
     except Exception as ex:
             return JsonResponse({"result": 'Failed to fetch data, Check Logic'}, safe=False)
 
- 
+"""
+This POST api save feedback into localhost's 
+mysql database with user_name and feedback text
+"""
+@api_view(['POST'])
+def create_feedback(request):
+    if request.method == 'POST':
+        serializer = FeedbackSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()  # Save the new Feedback instance to the database
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 # export MY_API_KEY='your_api_key_here' && python manage.py runserver -> run the server with the environment variable set

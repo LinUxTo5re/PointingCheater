@@ -33,7 +33,6 @@ function PointingCheaterUI() {
                 setCheaters(response.data.result.players);
                 setPointsStats(response.data.result.total_votes);
                 setAverageVotes(response.data.result.average_points);
-                console.log(response.data.result); // Log the response data directly
             }
 
         };

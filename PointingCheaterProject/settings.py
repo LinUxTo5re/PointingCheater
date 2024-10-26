@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -69,16 +70,21 @@ TEMPLATES = [
 # WSGI_APPLICATION = 'PointingCheaterProject.wsgi.application'
 ASGI_APPLICATION = 'PointingCheaterProject.asgi.application'
 
+#mysql db
+db_name = os.getenv('PP_DB_NAME')
+db_user = os.getenv('PP_DB_USER')
+db_password = os.getenv('PP_DB_USER_PASSWORD')
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': db_name,  # Name of your database
+        'USER': db_user,        # Your MySQL username
+        'PASSWORD': db_password,    # Your MySQL password
+        'HOST': 'localhost',            # Set to empty string for localhost
+        'PORT': '3306',                 # Default MySQL port
+    }
+}
 
 
 # Password validation
