@@ -1,0 +1,30 @@
+.idea/
+.vscode/
+.vs
+env/
+venv/
+.venv/
+dumb.rdb
+PointingCheaterAPI/__pycache__/
+PointingCheaterProject/__pycache__/
+
+# react app
+pointingcheaterui/node_modules
+pointingcheaterui/.pnp
+pointingcheaterui/.pnp.js
+
+## testing
+pointingcheaterui/coverage
+
+# production
+pointingcheaterui/build
+
+## misc
+pointingcheaterui/.DS_Store
+pointingcheaterui/.env.local
+pointingcheaterui/.env.development.local
+pointingcheaterui/.env.test.local
+pointingcheaterui/.env.production.local
+pointingcheaterui/npm-debug.log*
+pointingcheaterui/yarn-debug.log*
+pointingcheaterui/yarn-error.log*
