@@ -1,0 +1,12 @@
+make sure that:
+1) installed mysql-server on linux machine
+2) set-up the mysql-server with same credentials
+3) installed pip from requiremetns.txt
+4) run the npm install cmd
+5) set up ENV VARIABLES: PP_API_KEY, PP_DB_NAME, PP_DB_USER, PP_DB_USER_PASSWORD
+
+Example: export PP_API_KEY='<key>' \
+       PP_DB_NAME='pointing_cheater_feedback' \
+PP_DB_USER='pointing_cheater' \
+PP_DB_USER_PASSWORD='NoPassword' \
+&& python manage.py runserver
