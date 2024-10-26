@@ -6,25 +6,33 @@ venv/
 .venv/
 dumb.rdb
 PointingCheaterAPI/__pycache__/
+PointingCheaterAPI/migrations/__pycache__/
 PointingCheaterProject/__pycache__/
 
 # react app
+pointingcheaterui/node_modules/
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
 pointingcheaterui/node_modules
 pointingcheaterui/.pnp
 pointingcheaterui/.pnp.js
 
-## testing
+# testing
 pointingcheaterui/coverage
 
 # production
 pointingcheaterui/build
 
-## misc
+# misc
 pointingcheaterui/.DS_Store
 pointingcheaterui/.env.local
 pointingcheaterui/.env.development.local
 pointingcheaterui/.env.test.local
 pointingcheaterui/.env.production.local
+
 pointingcheaterui/npm-debug.log*
 pointingcheaterui/yarn-debug.log*
 pointingcheaterui/yarn-error.log*
+

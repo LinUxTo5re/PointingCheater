@@ -1,0 +1,1 @@
+export const PointingPokerAPI_URL = 'http://localhost:8000/api/getvotes/'
