@@ -44,10 +44,21 @@ MIDDLEWARE = [
 
 ]
 
-# Allowing api call from react app
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+CORS_ALLOW_CREDENTIALS = True  # If you are sending credentials
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'authorization',
+    'ngrok-skip-browser-warning',
+    'x-requested-with',
+    'accept',
+    'origin',
+    'x-xsrf-token',
 ]
+
 
 ROOT_URLCONF = 'PointingCheaterProject.urls'
 

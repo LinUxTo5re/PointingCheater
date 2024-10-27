@@ -1,3 +1,5 @@
-export const PointingPokerAPI_URL = 'http://localhost:8000/api/getvotes/';
+const BaseURL = process.env.REACT_APP_DJANGO_API_URL;
 
-export const StoreFeedbackForm = 'http://localhost:8000/api/postfeedback/';
+export const PointingPokerAPI_URL = BaseURL + '/api/getvotes/'
+
+export const StoreFeedbackForm = BaseURL + '/api/postfeedback/';
