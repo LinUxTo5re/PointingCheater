@@ -13,9 +13,14 @@ function PointingCheaterUI() {
     const brandingName = 'Pointing Cheater Presented by Chaitanyaa_';
 
     useEffect(() => {
+
         const fetchData = async () => {
             try {
-                const response = await axios.get(PointingPokerAPI_URL);
+                const response = await axios.get(PointingPokerAPI_URL, {
+                    headers: {
+                        'ngrok-skip-browser-warning': 'true'  // Custom header to skip warning
+                      }
+                });
                 handleData(response);
             } catch (error) {
                 console.error("Error fetching PointingPoker data:", error);
@@ -38,7 +43,7 @@ function PointingCheaterUI() {
         };
 
         fetchData();
-        const intervalId = setInterval(fetchData, 3000); // Call fetchData every 3 seconds
+        const intervalId = setInterval(fetchData, 2000); // Call fetchData every 2 seconds
         return () => clearInterval(intervalId);
     }, []); 
 
