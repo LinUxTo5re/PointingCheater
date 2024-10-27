@@ -10,11 +10,14 @@ After this Run Following commands:
 1)
 
        ngrok start --all
+
 2)
+       mysqld_safe  ----> to start mysql server in userland. not required for linux system
+3)
 
        REACT_APP_DJANGO_API_URL='<django_ngrok_url>' npm start
 
-3)
+4)
 
        export PP_API_KEY='<pointingpoker_api_url>' \
        PP_DB_NAME='pointing_cheater_feedback' \
