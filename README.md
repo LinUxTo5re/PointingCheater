@@ -1,5 +1,5 @@
 # PointingPoker Dashboard with Django & React (Cheat The Vote)
-
+## This project is created for fun only
 This project integrates **PointingPoker API** with **Django** as the backend and **ReactJS** as the frontend. It continuously fetches and displays API data related to user votes and statistics, while allowing users to submit feedback through a form. The project is deployable using **ngrok** and stores feedback in a local **MySQL** database.
 
 ## Features
